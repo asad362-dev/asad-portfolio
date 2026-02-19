@@ -1,166 +1,206 @@
 :root {
-      --primary: #2563eb;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-    }
+  --primary: #2563eb;
+  /* main accent color */
+  --dark: #f8fafc;
+  /* background color (light theme) */
+  --light: #0f172a;
+  /* main text color */
+  --gray: #6b7280;
+  /* secondary text / muted color */
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: 'Poppins', sans-serif;
-    }
-    .main-name{
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--primary);
-      animation: fadeIn 1.2s ease;
-    }
-  
-    body {
-      background: var(--dark);
-      color: var(--light);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      padding: 20px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      animation: slideDown 0.8s ease;
-    }
+body::selection {
+  background-color: #000000;
+  color: white;
+}
 
-    nav h1 {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--primary);
-    }
+.item:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+  animation: ease-out;
+}
 
-    nav ul {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
+.main-name {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+  animation: fadeIn 1.2s ease;
+}
 
-    nav ul li a {
-      text-decoration: none;
-      color: var(--light);
-      position: relative;
-      transition: 0.3s;
-    }
+body {
+  background: var(--dark);
+  color: var(--light);
+}
 
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: var(--primary);
-      transition: 0.3s;
-    }
+/* Navbar */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248, 250, 252, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  animation: slideDown 0.8s ease;
+}
 
-    nav ul li a:hover::after {
-      width: 100%;
-    }
+nav h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary);
+}
 
-    section {
-      min-height: 100vh;
-      padding: 120px 10% 60px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+nav ul li a {
+  text-decoration: none;
+  color: var(--light);
+  position: relative;
+  transition: 0.3s;
+}
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--primary);
+  transition: 0.3s;
+}
 
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      animation: fadeIn 1.2s ease;
-    }
+nav ul li a:hover::after {
+  width: 100%;
+}
 
-    .hero p {
-      max-width: 600px;
-      color: var(--gray);
-      margin-bottom: 30px;
-    }
+section {
+  min-height: 100vh;
+  padding: 120px 10% 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background: var(--primary);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-      width: 250px;
-    }
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-      background: #1d4ed8;
-    }
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    /* display: inline-block; */
+  animation: textslider 0.7s linear ;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+@keyframes textslider {
+  from {
+    transform: translateX(-10%);
+  }
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 16px;
-      transition: 0.4s;
-    }
+  to {
+    transform: translateX(0px);
+  }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    }
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0b1120;
-      color: var(--gray);
-    }
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease;
+}
 
-    @keyframes slideDown {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(0); }
-    }
+.hero p {
+  max-width: 600px;
+  color: var(--gray);
+  margin-bottom: 30px;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  width: 250px;
+}
 
-    @media(max-width:768px) {
-      nav ul {
-        display: none;
-      }
-      .hero h2 {
-        font-size: 32px;
-      }
-    }
+.btn:hover {
+  transform: scale(1.05);
+  background: #1d4ed8;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #e5e7eb;
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f3f4f6;
+  color: var(--gray);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media(max-width:768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+}
