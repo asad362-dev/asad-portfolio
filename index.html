@@ -59,13 +59,18 @@
 <section id="contact">
   <h2>Contact Me</h2>
 
-<form id="contactForm" class="contact-form">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-  <button type="submit" class="btn1">Send Message</button>
-</form>
+  <!-- CLEAN FORM -->
+  <form id="contactForm" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn1">Send Message</button>
+  </form>
+
 </section>
 
 <footer>
@@ -88,12 +93,12 @@ window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
 
-/* ===== FORM SUBMIT WITHOUT REDIRECT ===== */
+/* ===== AJAX FORM SUBMIT (NO REDIRECT) ===== */
 
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function(e) {
-  e.preventDefault(); // page reload stop
+  e.preventDefault();
 
   const formData = new FormData(form);
 
