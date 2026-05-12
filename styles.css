@@ -110,7 +110,12 @@ section.show {
   font-weight: 600;
   color: var(--primary);
 }
-
+.txt-upload:hover
+{
+  background-color: var(--primary);
+  color: white;
+  border-radius: 10px;
+}
 /* PROJECTS */
 .projects {
   margin-top: 10px;
